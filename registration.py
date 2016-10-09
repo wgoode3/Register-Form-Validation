@@ -26,7 +26,7 @@ def validation():
 		day = 10*int(now[8])+int(now[9])
 		#this previously crashed everything if the date wasn't enterred properly, too short, etc
 		m, d, y = int(dob.split('/')[0]), int(dob.split('/')[1]), int(dob.split('/')[2])
-	except IndexError:
+	except ValueError, IndexError:
 		pass
 
 	if len(request.form['fname']) < 1:
